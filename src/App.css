@@ -1,0 +1,15 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-primary {
+  background-color: #28a745 !important;
+}
+
+.text-primary {
+  color: #28a745 !important;
+}
