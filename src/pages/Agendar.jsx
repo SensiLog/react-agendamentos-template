@@ -47,6 +47,16 @@ function Agendar() {
     }
   };
 
+  const handleWhatsAppRedirect = () => {
+    const phoneNumber = "5581992164873";
+    const message = `Olá, gostaria de confirmar meu agendamento:\n\n` +
+      `*Serviço:* ${selectedService.name}\n` +
+      `*Data:* ${selectedSlot.date}\n` +
+      `*Horário:* ${selectedSlot.time}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+  };
+
   const handleConfirm = async () => {
     if (!selectedService || !selectedSlot) {
       alert("Por favor, selecione um serviço e um horário.");
@@ -63,6 +73,7 @@ function Agendar() {
         }),
       });
       alert("Agendamento confirmado!");
+      handleWhatsAppRedirect(); // Redireciona para o WhatsApp
       setStep(1);
     } catch (error) {
       alert("Erro ao criar evento. Tente novamente.");
